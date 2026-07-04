@@ -305,5 +305,173 @@ export const products: Product[] = [
     trending: false,
     inStock: true,
     badge: "Trending"
+  },
+  {
+    id: "aura-wave-iem",
+    name: "Aura Wave IEMs",
+    tagline: "Professional Hybrid Driver In-Ear Monitors",
+    description: "Designed for artists and audiophiles, featuring custom hybrid armature and dynamic drivers.",
+    longDescription: "For those who demand uncompromising acoustic detail in a compact form factor. The Aura Wave IEMs use a hybrid system combining a balanced armature driver for crystal-clear highs and a 10mm dynamic driver for deep, impactful bass. Encased in a custom-molded medical-grade resin shell.",
+    price: 179,
+    category: "Audio",
+    rating: 4.85,
+    reviewsCount: 64,
+    images: [
+      "https://images.unsplash.com/photo-1583394838336-acd977736f90?q=80&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1608156639585-b3a032ef9689?q=80&w=800&auto=format&fit=crop"
+    ],
+
+    colors: [
+      { name: "Obsidian Shell", hex: "#0f0f10" },
+      { name: "Crystal Clear", hex: "#e4e4e7" }
+    ],
+    specs: [
+      { name: "Drivers", value: "Custom Balanced Armature + 10mm Dynamic Hybrid" },
+      { name: "Frequency Response", value: "10Hz - 35,000Hz" },
+      { name: "Impedance", value: "16 Ohms @ 1kHz" },
+      { name: "Cable Type", value: "Detachable 0.78mm 2-pin Silver-plated Copper" }
+    ],
+    featured: true,
+    trending: false,
+    inStock: true,
+    badge: "Hi-Res Audio"
+  },
+  {
+    id: "aura-beam-dac",
+    name: "Aura Beam DAC/AMP",
+    tagline: "Ultra-Low Distortion Balanced Headphone DAC/Amplifier",
+    description: "High-resolution desktop converter featuring dual ESS Sabre DAC chips and balanced outputs.",
+    longDescription: "Unchain the true potential of your high-impedance headphones. The Aura Beam houses dual premium ES9038Q2M DAC chips configured in balanced mode, drastically reducing noise and distortion. Delivering up to 4Vrms from its 4.4mm balanced output, it provides effortless dynamic range and acoustic transparency.",
+    price: 249,
+    category: "Audio",
+    rating: 4.9,
+    reviewsCount: 45,
+    images: [
+      "https://images.unsplash.com/photo-1546435770-a3e426bf472b?q=80&w=800&auto=format&fit=crop"
+    ],
+    colors: [
+      { name: "Space Grey", hex: "#4b5563" },
+      { name: "Sleek Silver", hex: "#d1d5db" }
+    ],
+    specs: [
+      { name: "DAC Chipset", value: "Dual ESS Sabre ES9038Q2M" },
+      { name: "Supported Formats", value: "DSD512 / PCM 32bit 768kHz / MQA Full Decoding" },
+      { name: "Output Jacks", value: "4.4mm Pentaconn Balanced & 3.5mm Single-Ended" },
+      { name: "THD+N", value: "< 0.00015% @ 1kHz" }
+    ],
+    featured: false,
+    trending: true,
+    inStock: true
+  },
+  {
+    id: "aura-desk-pad",
+    name: "Aura Merino Felt Desk Pad",
+    tagline: "Water-Repellent Premium Wool Felt Desk Mat",
+    description: "Crafted from 100% genuine Merino wool felt, offering tactile warmth and smooth mouse glide.",
+    longDescription: "Bring comfort and organization to your workspace setup. This premium desk mat is sourced from 100% genuine Merino wool, providing natural cushioning, thermal insulation, and a beautifully textured surface that stays flat. A subtle silicone grip pattern on the bottom prevents sliding.",
+    price: 69,
+    category: "Gear",
+    rating: 4.7,
+    reviewsCount: 112,
+    images: [
+      "https://images.unsplash.com/photo-1616440347437-b1c73416efc2?q=80&w=800&auto=format&fit=crop"
+    ],
+    colors: [
+      { name: "Charcoal Charcoal", hex: "#27272a" },
+      { name: "Ash Grey", hex: "#71717a" }
+    ],
+    specs: [
+      { name: "Material", value: "100% German Merino Wool Felt" },
+      { name: "Thickness", value: "4.5mm Premium Grade" },
+      { name: "Dimensions", value: "90cm x 40cm (Large)" },
+      { name: "Backing", value: "Non-slip eco-friendly latex textured nodes" }
+    ],
+    featured: false,
+    trending: true,
+    inStock: true
+  },
+  {
+    id: "aura-horizon-arm",
+    name: "Aura Horizon Monitor Arm",
+    tagline: "Premium Mechanical Spring Single Monitor Mount",
+    description: "Heavy-duty workspace arm with internal cable routing channels and effortless motion dynamics.",
+    longDescription: "Elevate your visual plane with the Horizon Monitor Arm. Engineered with heavy-duty mechanical springs rather than gas cylinders, it maintains its lift capacity and settings indefinitely. Built-in cable routing shrouds keep your cables entirely hidden, while offering 360-degree rotation and micro-tension adjustments.",
+    price: 159,
+    category: "Gear",
+    rating: 4.8,
+    reviewsCount: 51,
+    images: [
+      "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?q=80&w=800&auto=format&fit=crop"
+    ],
+    colors: [
+      { name: "Stealth Black", hex: "#09090b" },
+      { name: "Matte White", hex: "#f4f4f5" }
+    ],
+    specs: [
+      { name: "Weight Support", value: "2kg to 15kg (Fits 17\" - 49\" Screens)" },
+      { name: "VESA Pattern", value: "75x75mm / 100x100mm Quick Release" },
+      { name: "Tilt & Swivel", value: "+90°/-90° Tilt, 360° Swivel, 360° Screen Rotation" },
+      { name: "Mounting Style", value: "Desk Clamp or Grommet Hole installation" }
+    ],
+    featured: true,
+    trending: false,
+    inStock: true,
+    badge: "Ergonomic Choice"
+  },
+  {
+    id: "aura-nano-pc",
+    name: "Aura Nano Studio PC",
+    tagline: "High-Performance Modular Mini Workstation",
+    description: "Packed with desktop-class processing power and expansion capability in a 1-liter chassis.",
+    longDescription: "The Aura Nano is a miracle of modular computing. Housed in a beautifully ventilated aerospace-grade aluminum chassis with a genuine wood top plate, it occupies negligible space while delivering workstation performance. Supports dual NVMe slots, custom low-profile heat pipe cooling, and full external GPU expansion.",
+    price: 899,
+    category: "Computing",
+    rating: 4.9,
+    reviewsCount: 22,
+    images: [
+      "https://images.unsplash.com/photo-1591488320449-011701bb6704?q=80&w=800&auto=format&fit=crop"
+    ],
+    colors: [
+      { name: "Dark Anthracite", hex: "#1e293b" },
+      { name: "Bronze & Copper", hex: "#78350f" }
+    ],
+    specs: [
+      { name: "Processor", value: "Aura Core-M 8-Core (4.6GHz Boost)" },
+      { name: "Memory", value: "16GB Dual-Channel DDR5 (Upgradable to 64GB)" },
+      { name: "Storage", value: "512GB PCIe Gen 4x4 SSD (Extra slot available)" },
+      { name: "I/O Ports", value: "2x Thunderbolt 4, 4x USB-A 3.2, 1x HDMI 2.1, 2.5Gb Ethernet" }
+    ],
+    featured: true,
+    trending: true,
+    inStock: true,
+    badge: "Next Gen"
+  },
+  {
+    id: "aura-vision-glasses",
+    name: "Aura Vision Smart Glasses",
+    tagline: "Minimal HUD Augmented Smart Spectacles",
+    description: "Seamlessly displaying tasks, calendar highlights, and turn-by-turn directions right before your eyes.",
+    longDescription: "Aura Vision reinvents the smart interface. Utilizing micro-waveguide lenses, they overlay crisp, monochrome, translucent data HUD overlays without obstructing your view. Designed to look and feel like premium optical glasses, weighing just 45 grams, and linking smoothly with your smart devices via Bluetooth LE.",
+    price: 349,
+    category: "Wearables",
+    rating: 4.65,
+    reviewsCount: 48,
+    images: [
+      "https://images.unsplash.com/photo-1572635196237-14b3f281503f?q=80&w=800&auto=format&fit=crop"
+    ],
+    colors: [
+      { name: "Space Black", hex: "#18181b" },
+      { name: "Crystal Ice", hex: "#e4e4e7" }
+    ],
+    specs: [
+      { name: "HUD Optics", value: "Micro-LED Waveguide, 85% transparency" },
+      { name: "Connectivity", value: "Bluetooth 5.2 Low Energy" },
+      { name: "Battery Life", value: "Up to 8 Hours Active HUD usage" },
+      { name: "Weight", value: "45 grams" }
+    ],
+    featured: false,
+    trending: true,
+    inStock: true
   }
 ];
+

@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { Cpu, Github, Twitter, Instagram } from "lucide-react";
+import { Github, Twitter, Instagram } from "lucide-react";
 import { useToast } from "@/context/ToastContext";
 
 export const Footer: React.FC = () => {
@@ -23,23 +23,37 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand Info */}
           <div className="space-y-4 col-span-1 md:col-span-1">
-            <Link href="/" className="flex items-center gap-2">
-              <Cpu className="w-6 h-6 text-indigo-400" />
-              <span className="font-extrabold text-xl tracking-wider font-outfit text-white">
-                CoreTrade
+            <Link href="/" className="flex items-center gap-2.5">
+              <svg className="w-7 h-7 shrink-0" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 2L28 9V23L16 30L4 23V9L16 2Z" stroke="url(#footer-logo-gradient)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="url(#footer-logo-fill-gradient)" fillOpacity="0.1" />
+                <path d="M12 12H20V16H12V20H20" stroke="url(#footer-logo-gradient)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M16 8V24" stroke="url(#footer-logo-gradient)" strokeWidth="1.5" strokeDasharray="3 3" opacity="0.6" />
+                <defs>
+                  <linearGradient id="footer-logo-gradient" x1="4" y1="2" x2="28" y2="30" gradientUnits="userSpaceOnUse">
+                    <stop stopColor="#6366f1" />
+                    <stop offset="1" stopColor="#a855f7" />
+                  </linearGradient>
+                  <linearGradient id="footer-logo-fill-gradient" x1="4" y1="2" x2="28" y2="30" gradientUnits="userSpaceOnUse">
+                    <stop stopColor="#6366f1" />
+                    <stop offset="1" stopColor="#a855f7" />
+                  </linearGradient>
+                </defs>
+              </svg>
+              <span className="font-black text-2xl tracking-wide font-outfit text-white">
+                Core<span className="text-indigo-400">Trade</span>
               </span>
             </Link>
             <p className="text-sm text-zinc-400 leading-relaxed">
               Curating elite workspace items, audiophile components, and premium modular electronics for creators and builders.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-zinc-500 hover:text-white transition-colors">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors">
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="#" className="text-zinc-500 hover:text-white transition-colors">
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors">
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="text-zinc-500 hover:text-white transition-colors">
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors">
                 <Github className="w-5 h-5" />
               </a>
             </div>
@@ -77,24 +91,24 @@ export const Footer: React.FC = () => {
             <h4 className="font-semibold text-sm text-white uppercase tracking-wider mb-4">Support</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-sm text-zinc-400 hover:text-white transition-colors">
+                <Link href="/shipping" className="text-sm text-zinc-400 hover:text-white transition-colors">
                   Shipping Rates
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-sm text-zinc-400 hover:text-white transition-colors">
+                <Link href="/returns" className="text-sm text-zinc-400 hover:text-white transition-colors">
                   Warranty & Returns
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-sm text-zinc-400 hover:text-white transition-colors">
+                <Link href="/faq" className="text-sm text-zinc-400 hover:text-white transition-colors">
                   FAQ
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-sm text-zinc-400 hover:text-white transition-colors">
+                <Link href="/contact" className="text-sm text-zinc-400 hover:text-white transition-colors">
                   Contact Us
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -131,8 +145,8 @@ export const Footer: React.FC = () => {
             &copy; {new Date().getFullYear()} CoreTrade Inc. All rights reserved.
           </p>
           <div className="flex space-x-6 text-xs text-zinc-500">
-            <a href="#" className="hover:text-zinc-300">Privacy Policy</a>
-            <a href="#" className="hover:text-zinc-300">Terms of Use</a>
+            <Link href="/privacy" className="hover:text-zinc-300">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-zinc-300">Terms of Use</Link>
           </div>
         </div>
       </div>

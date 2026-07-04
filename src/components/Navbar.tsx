@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { ShoppingBag, Heart, Search, Menu, X, Cpu } from "lucide-react";
+import { ShoppingBag, Heart, Search, Menu, X, Sun, Moon } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 import { useWishlist } from "@/context/WishlistContext";
 import { CartSidebar } from "./CartSidebar";
@@ -13,9 +13,29 @@ export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const [theme, setTheme] = useState<"light" | "dark">("dark");
   
   const pathname = usePathname();
   const router = useRouter();
+
+  useEffect(() => {
+    const currentTheme = document.documentElement.classList.contains("light") ? "light" : "dark";
+    const timer = setTimeout(() => {
+      setTheme(currentTheme);
+    }, 0);
+    return () => clearTimeout(timer);
+  }, []);
+  const toggleTheme = () => {
+    const nextTheme = theme === "dark" ? "light" : "dark";
+    setTheme(nextTheme);
+    if (nextTheme === "light") {
+      document.documentElement.classList.add("light");
+      localStorage.setItem("coretrade_theme", "light");
+    } else {
+      document.documentElement.classList.remove("light");
+      localStorage.setItem("coretrade_theme", "dark");
+    }
+  };
   const { cartCount } = useCart();
   const { wishlist } = useWishlist();
 
@@ -59,12 +79,26 @@ export const Navbar: React.FC = () => {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <div className="flex items-center">
-              <Link href="/" className="flex items-center gap-2 group">
-                <div className="p-2 rounded-xl bg-indigo-600/10 border border-indigo-500/20 group-hover:bg-indigo-600/20 transition-all">
-                  <Cpu className="w-6 h-6 text-indigo-400 animate-pulse" />
+              <Link href="/" className="flex items-center gap-2.5 group">
+                <div className="p-1.5 rounded-xl bg-indigo-650/5 border border-indigo-500/15 group-hover:bg-indigo-600/10 transition-all">
+                  <svg className="w-7 h-7 shrink-0 transition-transform duration-300 group-hover:scale-105" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 2L28 9V23L16 30L4 23V9L16 2Z" stroke="url(#logo-gradient)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="url(#logo-fill-gradient)" fillOpacity="0.1" />
+                    <path d="M12 12H20V16H12V20H20" stroke="url(#logo-gradient)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M16 8V24" stroke="url(#logo-gradient)" strokeWidth="1.5" strokeDasharray="3 3" opacity="0.6" />
+                    <defs>
+                      <linearGradient id="logo-gradient" x1="4" y1="2" x2="28" y2="30" gradientUnits="userSpaceOnUse">
+                        <stop stopColor="#6366f1" />
+                        <stop offset="1" stopColor="#a855f7" />
+                      </linearGradient>
+                      <linearGradient id="logo-fill-gradient" x1="4" y1="2" x2="28" y2="30" gradientUnits="userSpaceOnUse">
+                        <stop stopColor="#6366f1" />
+                        <stop offset="1" stopColor="#a855f7" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
                 </div>
-                <span className="font-extrabold text-2xl tracking-wider font-outfit text-white">
-                  CoreTrade
+                <span className="font-black text-2xl tracking-wide font-outfit text-white">
+                  Core<span className="text-indigo-400">Trade</span>
                 </span>
               </Link>
             </div>
@@ -117,7 +151,7 @@ export const Navbar: React.FC = () => {
               {/* Cart */}
               <button
                 onClick={() => setIsCartOpen(true)}
-                className="relative text-zinc-400 hover:text-white transition-colors cursor-pointer"
+                className="relative text-zinc-400 hover:text-white transition-colors cursor-pointer mr-1"
                 title="Cart"
               >
                 <ShoppingBag className="w-5.5 h-5.5" />
@@ -127,10 +161,28 @@ export const Navbar: React.FC = () => {
                   </span>
                 )}
               </button>
+
+              {/* Theme Toggle */}
+              <button
+                onClick={toggleTheme}
+                className="p-2 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 text-zinc-400 hover:text-white cursor-pointer transition-colors"
+                title={theme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode"}
+              >
+                {theme === "dark" ? <Sun className="w-5 h-5 text-amber-400" /> : <Moon className="w-5 h-5 text-indigo-400" />}
+              </button>
             </div>
 
             {/* Mobile menu button */}
-            <div className="flex md:hidden items-center space-x-4">
+            <div className="flex md:hidden items-center space-x-3">
+              {/* Mobile Theme Toggle */}
+              <button
+                onClick={toggleTheme}
+                className="p-1.5 rounded-lg bg-white/5 border border-white/5 text-zinc-400 hover:text-white cursor-pointer"
+                title="Toggle Theme"
+              >
+                {theme === "dark" ? <Sun className="w-4.5 h-4.5 text-amber-400" /> : <Moon className="w-4.5 h-4.5 text-indigo-400" />}
+              </button>
+
               <button
                 onClick={() => setIsCartOpen(true)}
                 className="relative text-zinc-400 hover:text-white transition-colors cursor-pointer"
